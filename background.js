@@ -94,10 +94,16 @@ function executeScript(tabId, taxRate, currency, rates, shippingCost, shipping) 
                             priceSpan.parentNode.appendChild(shippingSpan);
                         }
                         
-                        let taxSpan = document.createElement("span");
-                        taxSpan.className = 'appended';
-                        taxSpan.textContent = ` (Tax: ${currencySymbol(currency)}${taxAmount.toFixed(2)})`;
-                        priceSpan.parentNode.appendChild(taxSpan);
+                        if(taxAmount ==0 || shipping === "No TAX"){
+
+                            
+                        }else{
+                            let taxSpan = document.createElement("span");
+                            taxSpan.className = 'appended';
+                            taxSpan.textContent = ` (Tax: ${currencySymbol(currency)}${taxAmount.toFixed(2)})`;
+                            priceSpan.parentNode.appendChild(taxSpan);
+                        }
+                        
                         let totalSpan = document.createElement("span");
                         totalSpan.className = 'appended';
                         totalSpan.textContent = ` (Total: ${currencySymbol(currency)}${totalCost.toFixed(2)})`;
