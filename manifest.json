@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Price Changer",
+  "name": "LTTStore.com Real Price ",
   "description": "This extension will find a price div and replace it with a custom value.",
   "version": "1.0",
   "permissions": ["storage", "scripting", "tabs"],
@@ -8,7 +8,14 @@
     "http://*/*",
     "https://*/*"
   ],
-  "options_page": "options.html",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_popup": "options.html"
+  },
   "background": {
     "service_worker": "background.js"
   }
