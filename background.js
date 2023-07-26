@@ -3,13 +3,15 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     if (tab.url.includes("https://www.lttstore.com/cart")) {
         return;
     }
+    chrome.storage.sync.set({ tabId: tabId });
     if (changeInfo.status === 'complete' && tab.url.startsWith('http')) {
-        chrome.storage.sync.get(['taxRate', 'currency', 'rates', 'lastFetch', 'shippingCost'], function (data) {
+        chrome.storage.sync.get(['taxRate', 'currency', 'rates', 'lastFetch', 'shippingCost', 'shipping'], function (data) {
             let taxRate = data.taxRate || 0;
             let currency = data.currency || 'USD';
             let rates = data.rates || {};
             let lastFetch = data.lastFetch;
             let shippingCost = Number(data.shippingCost) || 19.99;
+            let shipping = data.shipping || 'USA';
             let now = Date.now();
             let twentyFourHours = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
             if (!lastFetch || now - lastFetch > twentyFourHours) {
@@ -19,21 +21,21 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
                     .then(data => {
                         rates = data.rates; // Extract the rates from the response
                         chrome.storage.sync.set({ rates: rates, lastFetch: now }, function () {
-                            executeScript(tabId, taxRate, currency, rates, shippingCost);
+                            executeScript(tabId, taxRate, currency, rates, shippingCost, shipping);
                         });
                     });
             } else {
                 // Rates are less than 24 hours old, use them
-                executeScript(tabId, taxRate, currency, rates, shippingCost);
+                executeScript(tabId, taxRate, currency, rates, shippingCost, shipping);
             }
         });
     }
 });
 
-function executeScript(tabId, taxRate, currency, rates, shippingCost) {
+function executeScript(tabId, taxRate, currency, rates, shippingCost, shipping) {
     chrome.scripting.executeScript({
         target: { tabId: tabId },
-        function: function (taxRate, currency, rates, shippingCost) {
+        function: function (taxRate, currency, rates, shippingCost, shipping) {
             function currencySymbol(currency) {
                 switch (currency) {
                     case 'USD':
@@ -65,9 +67,22 @@ function executeScript(tabId, taxRate, currency, rates, shippingCost) {
                         }
                         let convertedPrice = convertCurrency(originalPrice, currency, rates);
                         let shippingCostConverted = convertCurrency(shippingCost, currency, rates);
-                        let costBeforeTax = convertedPrice + shippingCostConverted;
-                        let taxAmount = costBeforeTax * taxRate / 100;
+    
+                        let taxAmount = 0;
+                        let costBeforeTax = convertedPrice;
+    
+                        if (shipping === 'USA') {
+                            taxAmount = costBeforeTax * taxRate / 100;
+                        }
+    
+                        costBeforeTax += shippingCostConverted;
+    
+                        if (shipping === 'EU') {
+                            taxAmount = costBeforeTax * taxRate / 100;
+                        }
+    
                         let totalCost = costBeforeTax + taxAmount;
+
                         priceSpan.textContent = `${currencySymbol(currency)}${convertedPrice.toFixed(2)}`;
                         let shippingSpan = document.createElement("span");
                         shippingSpan.className = 'appended';
@@ -119,6 +134,6 @@ function executeScript(tabId, taxRate, currency, rates, shippingCost) {
 
             replacePrices();
         },
-        args: [taxRate, currency, rates, shippingCost]
+        args: [taxRate, currency, rates, shippingCost, shipping]
     });
 }

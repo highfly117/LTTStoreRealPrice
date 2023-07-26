@@ -1,12 +1,11 @@
 {
   "manifest_version": 3,
   "name": "LTTStore.com Real Price ",
-  "description": "This extension will find a price div and replace it with a custom value.",
+  "description": "This Extention take the price of items on LTTStore.com and add tax and shipping to the prices.",
   "version": "1.0",
   "permissions": ["storage", "scripting", "tabs"],
   "host_permissions": [
-    "http://*/*",
-    "https://*/*"
+    "*://www.lttstore.com/*"
   ],
   "icons": {
     "16": "icon16.png",
