@@ -9,7 +9,6 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
             let taxRate = data.taxRate || 0;
             let currency = data.currency || 'USD';
             let rates = data.rates || {};
-            let listenerSet = false;
             let lastFetch = data.lastFetch;
             let shippingCost = Number(data.shippingCost);
             let shipping = data.shipping || 'USA';
@@ -37,10 +36,10 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 
 
 
-function executeScript(tabId, taxRate, currency, rates, shippingCost, shipping, listenerSet) {
+function executeScript(tabId, taxRate, currency, rates, shippingCost, shipping) {
     chrome.scripting.executeScript({
         target: { tabId: tabId },
-        function: function (taxRate, currency, rates, shippingCost, shipping, listenerSet) {
+        function: function (taxRate, currency, rates, shippingCost, shipping) {
             
             function getItemPrice(item) {
                 let price;
