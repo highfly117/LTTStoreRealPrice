@@ -1,6 +1,6 @@
 # LTTStoreRealPrice
 
-currently, this is a Chrome only extension I have not tried it with Edge or Firefox 
+This is a Chrome and Edge (Version 115.0.1901.183 tested) extension. I have not tried it with Edge or Firefox. 
 
 #Installation - Chrome
 
