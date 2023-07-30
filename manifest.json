@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "LTTStore.com Real Price ",
   "description": "This Extention take the price of items on LTTStore.com and add tax and shipping to the prices.",
-  "version": "1.0",
+  "version": "0.2.1",
   "permissions": ["storage", "scripting", "tabs"],
   "host_permissions": [
     "*://www.lttstore.com/*"
