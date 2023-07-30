@@ -1,0 +1,121 @@
+html {
+    width: 350px;
+    padding: 20px;
+    font-family: Poppins, sans-serif;
+    font-weight: bold;
+    color: var(--font-color);
+    background-color: var(--background-color);
+    cursor: default;
+}
+
+p,
+label {
+    font-size: 20px;
+}
+
+button {
+    background: var(--color-gradient);
+    color: #fff;
+    font-size: 1.5rem;
+    width: 200px;
+    height: 60px;
+    border-radius: 10px;
+    border-width: 0;
+    border-color: var(--border-color);
+    outline: none;
+    transition: transform .2s;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.05);
+    border-style: solid;
+    border-width: 2px;
+}
+
+.input-box {
+    display: flex;
+    align-items: center;
+    height: 45px;
+    width: 150px;
+    border-style: none;
+    box-shadow: inset 0 0 0 2px var(--field-border-color);
+    border-radius: 5px;
+    border-color: var(--field-border-color);
+    background-color: var(--field-background-color);
+    outline: none;
+    color: var(--font-color);
+    padding-left: 15px;
+    font-size: 20px;
+    box-shadow: .3s ease-out;
+    text-justify: inter-word;
+}
+
+.prefix {
+    width: 20px;
+    height: 31px;
+    text-align: center;
+}
+
+input[type="number"],
+select,
+input {
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--font-color);
+    font-size: 20px;
+    max-width: 150px;
+}
+
+datalist {
+    width: 150px;
+}
+
+input[type="number"] {
+    width: 117px;
+    height: 40px;
+}
+
+.input-box:hover {
+    box-shadow: inset 0 0 0 4px var(--field-border-color);
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    height: 1.25em;
+    width: 1.25em;
+    background: url(/icons/clear.svg);
+    background-size: contain;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 30px;
+}
+
+#logo {
+    width: 75px;
+}
+
+#header > h1 {
+    color: #ff4d00;
+}
+
+#optionsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: var(--border-color);
+    padding-bottom: 30px;
+}
+
+#optionsContainer>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

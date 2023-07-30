@@ -1,0 +1,226 @@
+<!-- options.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>LTT.com Real Price</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/popup/options-dark.css" media="(prefers-color-scheme: dark)">
+  <link rel="stylesheet" href="/popup/options-light.css" media="(prefers-color-scheme: light)">
+  <link rel="stylesheet" href="/popup/options.css">
+</head>
+
+<body>
+  <div id="header">
+    <img id="logo" src="/icons/LLTStoreTrueprice.svg">
+    <h1>LLTStore Trueprice</h1>
+  </div>
+  <div id="menuContainer">
+    <div id="optionsContainer">
+      <div>
+        <label for="shipping">Shipping:</label>
+        <div class="input-box">
+          <input id="shipping" type="search" name="shipping" list="shipping-list" placeholder="USA, EU, No tax">
+          <datalist id="shipping-list">
+            <option value="USA"></option>
+            <option value="EU"></option>
+            <option value="NO_TAX"></option>
+          </datalist>
+        </div>
+      </div>
+      <div>
+        <label for="taxRate">Tax Rate:</label>
+        <div class="input-box">
+          <span class="prefix">%</span>
+          <input type="number" id="taxRate" name="taxRate">
+        </div>
+      </div>
+      <div>
+        <label for="shipping-cost">Shipping Cost:</label>
+        <div class="input-box">
+          <span id="currency-prefix" class="prefix">$</span>
+          <input type="number" id="shipping-cost" name="shipping-cost" min="0" step="0.01" value="19.99">
+        </div>
+      </div>
+      <div>
+        <label for="currency">Currency:</label>
+        <div class="input-box">
+          <input id="currency" type="search" name="currency" list="currency-list" placeholder="USD, EUR">
+          <datalist id="currency-list">
+            <option value="GBP"></option>
+            <option value="AED"></option>
+            <option value="AFN"></option>
+            <option value="ALL"></option>
+            <option value="AMD"></option>
+            <option value="ANG"></option>
+            <option value="AOA"></option>
+            <option value="ARS"></option>
+            <option value="AUD"></option>
+            <option value="AWG"></option>
+            <option value="AZN"></option>
+            <option value="BAM"></option>
+            <option value="BBD"></option>
+            <option value="BDT"></option>
+            <option value="BGN"></option>
+            <option value="BHD"></option>
+            <option value="BIF"></option>
+            <option value="BMD"></option>
+            <option value="BND"></option>
+            <option value="BOB"></option>
+            <option value="BRL"></option>
+            <option value="BSD"></option>
+            <option value="BTN"></option>
+            <option value="BWP"></option>
+            <option value="BYN"></option>
+            <option value="BZD"></option>
+            <option value="CAD"></option>
+            <option value="CDF"></option>
+            <option value="CHF"></option>
+            <option value="CLP"></option>
+            <option value="CNY"></option>
+            <option value="COP"></option>
+            <option value="CRC"></option>
+            <option value="CUP"></option>
+            <option value="CVE"></option>
+            <option value="CZK"></option>
+            <option value="DJF"></option>
+            <option value="DKK"></option>
+            <option value="DOP"></option>
+            <option value="DZD"></option>
+            <option value="EGP"></option>
+            <option value="ERN"></option>
+            <option value="ETB"></option>
+            <option value="EUR"></option>
+            <option value="FJD"></option>
+            <option value="FKP"></option>
+            <option value="FOK"></option>
+            <option value="GBP"></option>
+            <option value="GEL"></option>
+            <option value="GGP"></option>
+            <option value="GHS"></option>
+            <option value="GIP"></option>
+            <option value="GMD"></option>
+            <option value="GNF"></option>
+            <option value="GTQ"></option>
+            <option value="GYD"></option>
+            <option value="HKD"></option>
+            <option value="HNL"></option>
+            <option value="HRK"></option>
+            <option value="HTG"></option>
+            <option value="HUF"></option>
+            <option value="IDR"></option>
+            <option value="ILS"></option>
+            <option value="IMP"></option>
+            <option value="INR"></option>
+            <option value="IQD"></option>
+            <option value="IRR"></option>
+            <option value="ISK"></option>
+            <option value="JEP"></option>
+            <option value="JMD"></option>
+            <option value="JOD"></option>
+            <option value="JPY"></option>
+            <option value="KES"></option>
+            <option value="KGS"></option>
+            <option value="KHR"></option>
+            <option value="KID"></option>
+            <option value="KMF"></option>
+            <option value="KRW"></option>
+            <option value="KWD"></option>
+            <option value="KYD"></option>
+            <option value="KZT"></option>
+            <option value="LAK"></option>
+            <option value="LBP"></option>
+            <option value="LKR"></option>
+            <option value="LRD"></option>
+            <option value="LSL"></option>
+            <option value="LYD"></option>
+            <option value="MAD"></option>
+            <option value="MDL"></option>
+            <option value="MGA"></option>
+            <option value="MKD"></option>
+            <option value="MMK"></option>
+            <option value="MNT"></option>
+            <option value="MOP"></option>
+            <option value="MRU"></option>
+            <option value="MUR"></option>
+            <option value="MVR"></option>
+            <option value="MWK"></option>
+            <option value="MXN"></option>
+            <option value="MYR"></option>
+            <option value="MZN"></option>
+            <option value="NAD"></option>
+            <option value="NGN"></option>
+            <option value="NIO"></option>
+            <option value="NOK"></option>
+            <option value="NPR"></option>
+            <option value="NZD"></option>
+            <option value="OMR"></option>
+            <option value="PAB"></option>
+            <option value="PEN"></option>
+            <option value="PGK"></option>
+            <option value="PHP"></option>
+            <option value="PKR"></option>
+            <option value="PLN"></option>
+            <option value="PYG"></option>
+            <option value="QAR"></option>
+            <option value="RON"></option>
+            <option value="RSD"></option>
+            <option value="RUB"></option>
+            <option value="RWF"></option>
+            <option value="SAR"></option>
+            <option value="SBD"></option>
+            <option value="SCR"></option>
+            <option value="SDG"></option>
+            <option value="SEK"></option>
+            <option value="SGD"></option>
+            <option value="SHP"></option>
+            <option value="SLL"></option>
+            <option value="SOS"></option>
+            <option value="SRD"></option>
+            <option value="SSP"></option>
+            <option value="STN"></option>
+            <option value="SYP"></option>
+            <option value="SZL"></option>
+            <option value="THB"></option>
+            <option value="TJS"></option>
+            <option value="TMT"></option>
+            <option value="TND"></option>
+            <option value="TOP"></option>
+            <option value="TRY"></option>
+            <option value="TTD"></option>
+            <option value="TWD"></option>
+            <option value="TZS"></option>
+            <option value="UAH"></option>
+            <option value="UGX"></option>
+            <option value="USD"></option>
+            <option value="UYU"></option>
+            <option value="UZS"></option>
+            <option value="VES"></option>
+            <option value="VND"></option>
+            <option value="VUV"></option>
+            <option value="WST"></option>
+            <option value="XAF"></option>
+            <option value="XCD"></option>
+            <option value="XDR"></option>
+            <option value="XOF"></option>
+            <option value="XPF"></option>
+            <option value="YER"></option>
+            <option value="ZAR"></option>
+            <option value="ZMW"></option>
+            <option value="ZWL"></option>
+          </datalist>
+          </input>
+        </div>
+      </div>
+    </div><br>
+
+    <button id="saveButton">Save</button>
+  </div>
+  <div id="status"></div>
+</body>
+
+<script src="options.js"></script>
+
+</html>
