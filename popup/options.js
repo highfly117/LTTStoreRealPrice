@@ -39,29 +39,3 @@ window.onload = function () {
     document.getElementById('currency').value = data.currency || 'USD';
   });
 };
-
-// Function to update the datalist options with all original entries
-function resetDatalistOptions(datalist) {
-  const originalOptions = datalist.innerHTML;
-  datalist.innerHTML = originalOptions;
-}
-
-// Event listener for the input fields' input event
-const searchInputs = document.querySelectorAll('input[type="text"]');
-searchInputs.forEach(searchInput => {
-  const associatedDatalist = document.getElementById(searchInput.getAttribute('list'));
-
-  // Event listener for the input field's input event
-  searchInput.addEventListener('input', () => {
-    if (searchInput.value === '') {
-      resetDatalistOptions(associatedDatalist);
-    }
-  });
-
-  // Event listener for the datalist's click event
-  associatedDatalist.addEventListener('click', () => {
-    if (searchInput.value === '') {
-      resetDatalistOptions(associatedDatalist);
-    }
-  });
-});
