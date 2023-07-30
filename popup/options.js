@@ -19,9 +19,9 @@ document.getElementById('saveButton').onclick = function () {
       status.textContent = '';
     }, 3000);
 
-    chrome.storage.sync.get('tabId', function(data) {
+    chrome.storage.sync.get('tabId', function (data) {
       let tabId = data.tabId;
-      
+
       // Check if we have a valid tabId
       if (tabId) {
         // Reload the tab

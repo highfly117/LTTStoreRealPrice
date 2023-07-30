@@ -1,0 +1,8 @@
+:root{
+    --background-color: #191919;
+    --font-color: #fff;
+    --border-color: #fff;
+    --field-background-color: #000;
+    --field-border-color: #fff;
+    --color-gradient: linear-gradient(to right, #1a2a6c, #b21f1f, #ac7f1f);
+}

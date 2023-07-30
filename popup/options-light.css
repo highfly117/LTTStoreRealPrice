@@ -1,0 +1,12 @@
+:root{
+    --background-color: #eee;
+    --font-color: #000;
+    --border-color: #121212;
+    --field-background-color: #fff;
+    --field-border-color: #e3e3e3;
+    --color-gradient: linear-gradient(92.28deg, #e31886 2.18%, #fb7800 90.32%);
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+    filter: invert();
+}
