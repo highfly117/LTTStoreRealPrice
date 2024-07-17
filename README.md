@@ -1,5 +1,8 @@
 # LTTStoreRealPrice
 
+![image](https://github.com/user-attachments/assets/60e9986b-9acf-4dfa-833e-2acfad7fced0)
+
+
 This is a Chrome and Edge (Version 115.0.1901.183 tested) extension. I have not tried it with Edge or Firefox. 
 
 #Installation - Chrome
